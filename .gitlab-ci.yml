@@ -1,0 +1,3 @@
+include:
+- template: Security/License-Scanning.gitlab-ci.yml
+- template: Jobs/Code-Quality.gitlab-ci.yml
