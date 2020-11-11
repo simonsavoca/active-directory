@@ -2,24 +2,24 @@
 
 ## Time Synchronization
 
-The time confiugration is determined by the Time32 windows service.
+The time configuration is determined by the Time32 windows service.
 According use case, your time toplogy will be different but based on the same principe of trusted source.
 
 The top level domain use a trusted NTP server to sync time.
 Each sub domain DC's sync time with root domain.
 
-In every case, each memebr servers needs to sync time with DC's of his own domain to ensure reliability.
+In every case, each member servers needs to sync time with DC's of his own domain to ensure reliability.
 
-### Mono domaon/Mono Forest configuration
+### Mono domain/Mono Forest
 
 ```mermaid
 graph TD;
-    NTP[fa:fa-history NTP Server] -->|Sync with private or public NTP| ForestDomain{Root domain}
-    ForestDomain -->|Sync with member servers|MemberRoot1[fa:fa-server Server A]
-    ForestDomain -->MemberRoot2[fa:fa-server Server B]
+    NTP[NTP Server] -->|Sync with private or public NTP| ForestDomain{Root domain}
+    ForestDomain -->|Sync with member servers|MemberRoot1[Server A]
+    ForestDomain -->MemberRoot2[Server B]
 ```
 
-### Forest and child domains
+### Forest and childs domains
 
 ```mermaid
 graph TD;
@@ -32,9 +32,7 @@ graph TD;
     ChildB --> MemberB2[fa:fa-server Server F]
     ForestDomain -->|Sync with member servers|MemberRoot1[fa:fa-server Server A]
     ForestDomain -->MemberRoot2[fa:fa-server Server B]
-```mermaid
-            
-
+```
 
 ## Sources
 
