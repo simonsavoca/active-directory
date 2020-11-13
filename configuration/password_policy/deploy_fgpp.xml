@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+  <policy name="AdminPasswordRule" BuiltinRoles="True" AdminRoles="True" Domain="">
+    <MinPasswordAge>1</MinPasswordAge>
+    <ComplexityEnabled>True</ComplexityEnabled>
+    <MinPasswordLength>15</MinPasswordLength>
+    <MaxPasswordAge>56</MaxPasswordAge>
+    <PasswordHistoryCount>13</PasswordHistoryCount>
+    <ReversibleEncryptionEnabled>False</ReversibleEncryptionEnabled>
+    <LockoutThreshold>5</LockoutThreshold>
+    <LockoutDuration>00:30</LockoutDuration>
+    <LockoutObservationWindow>00:30</LockoutObservationWindow>
+    <Precedence>100</Precedence>
+    <groups>
+      <group>MyOtherAdminGroup</group>
+    </groups>
+    <users>
+    </users>
+  </policy>
+  <policy name="ServiceAccountsPasswordRule" BuiltinRoles="False" AdminRoles="False" Domain="">
+    <MinPasswordAge>1</MinPasswordAge>
+    <ComplexityEnabled>True</ComplexityEnabled>
+    <MinPasswordLength>20</MinPasswordLength>
+    <MinPasswordAge>0</MinPasswordAge>
+    <MaxPasswordAge>365</MaxPasswordAge>
+    <PasswordHistoryCount>13</PasswordHistoryCount>
+    <ReversibleEncryptionEnabled>False</ReversibleEncryptionEnabled>
+    <LockoutThreshold>10</LockoutThreshold>
+    <LockoutDuration>00:00</LockoutDuration>
+    <LockoutObservationWindow>00:00</LockoutObservationWindow>
+    <Precedence>90</Precedence>
+    <groups>
+      <group>MyServiceAccountsGroup</group>
+    </groups>
+    <users>
+    </users>
+  </policy>
+</config>
